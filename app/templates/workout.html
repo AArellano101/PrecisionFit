@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+
+{% block content %}
+<div id="webcam-container">
+    <iframe src="/video" title="Video Webcam" id="webcam" scrolling="yes"></iframe>
+</div>
+<div id="webcam-data">
+    <h3 id="full-score">Accuracy Score: <span id="accuracy-score">X%</span></h3>
+    <div id="workout-data">
+        <label for="exercise-type"><b>Exercise Type:</b></label>
+        <select class="form-select" id="exercise-type" name="exercise-type" class="workout-inputs">
+            <option value="test">Test</option>
+            <option value="pushup">Pushup</option>
+            <option value="squat">Squat</option>
+            <option value="jumping-jack">Jumping Jack</option>
+        </select>
+        <div class="workout-inputs">
+            <label for="exercise-reps"><b>Number of reps:</b></label>
+            <input type="number" name="exercise-reps" id="exercise-reps">
+        </div>
+        <label for="rep-speed"><b>Rep speed:</b></label>
+        <select class="form-select" id="rep-speed" name="rep-speed" class="workout-inputs">
+            <option value=7>Slow</option>
+            <option value=5>Medium</option>
+            <option value=3>Fast</option>
+        </select>
+        <div class="workout-inputs">
+            <label for="exercise-sets"><b>Number of sets:</b></label>
+            <input type="number" name="exercise-sets" id="exercise-sets">
+        </div>
+        <div class="workout-inputs">
+            <label for="exercise-breaks"><b>Length of breaks (s):</b></label>
+            <input type="number" name="exercise-breaks" id="exercise-breaks">
+        </div>
+        <button type="button" class="btn btn-primary" id="begin-workout" onClick="startWorkout()">Start Workout</button>
+        <button type="button" class="btn btn-danger" id="end-workout" onClick="stopWorkout()" disabled>End Workout</button>
+    </div>
+</div>
+
+{% endblock %}

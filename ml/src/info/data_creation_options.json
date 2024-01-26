@@ -1,0 +1,24 @@
+{
+    "reference": "https://developers.google.com/static/mediapipe/images/solutions/pose_landmarks_index.png",
+    "metadata": {
+        "x": ["gender","height","reps","weight"], 
+        "y": "goodForm"
+    },
+    "joints": {
+        "lElbow": [11,13,15],
+        "rElbow": [12,14,16],
+        "lKnee": [24,26,28],
+        "rKnee": [23,25,27],
+        "canthalTilt": [8,0,7]},
+    "exercises": {
+        "pushup": {
+            "joints": ["lElbow","rElbow","lKnee","rKnee"],
+            "frames": 200
+        },
+        "test": {
+            "joints": ["lElbow","rElbow"],
+            "frames": 100
+        }
+    },
+    "decimals": 3
+}
