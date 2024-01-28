@@ -101,7 +101,9 @@ def main():
 
     model = tf.keras.Sequential()
 
-    model.add(tf.keras.layers.Dense(10, input_dim=inputNodes, activation='relu'))
+    model.add(tf.keras.layers.Dense(25, input_dim=inputNodes, activation='relu'))
+    model.add(tf.keras.layers.Dense(25, activation='relu'))
+    model.add(tf.keras.layers.Dense(25, activation='relu'))
     model.add(tf.keras.layers.Dense(1, activation='linear' ))
 
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_squared_error'])
