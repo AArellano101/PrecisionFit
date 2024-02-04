@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, Response, request, jsonify
 from webcam import generate_frames, send_prediction
 

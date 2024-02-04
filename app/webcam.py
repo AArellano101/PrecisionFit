@@ -61,8 +61,8 @@ def clean_data(txt_data, exerciseJoints, target, decimals, printInfo=True):
 
             estVal = (v2-v1)*(ei%1)+v1
             new_txt.append([n, j, round(estVal,decimals)])
-    # if printInfo:
-    print(f"Cleaned data: {new_txt}\n\n\n")
+    if printInfo:
+        print(f"Cleaned data: {new_txt}\n\n\n")
     return new_txt
 
 def plot_data(data, exerciseJoints):
@@ -129,11 +129,6 @@ def generate_frames(data):
 
             txt_data = []
 
-    # Because I dont have enough data, I will match metadata to myself
-    data["gender"] = 1
-    data["height"] = 68
-    data["weight"] = 165
-    data["reps"] = 1
 
     cap = cv.VideoCapture(0)
     pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)

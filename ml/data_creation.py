@@ -1,6 +1,5 @@
 import cv2 as cv
 import mediapipe as mp
-import csv
 import numpy as np
 import pyrebase
 import os
@@ -45,20 +44,6 @@ def plot_data(data, exerciseJoints):
 
         cr += 1 
 
-    # ng = len(exerciseJoints)
-    # (r, c) = (int(ng/2), int(ng/2)) if ng % 2 == 0 else (int(ng/2), int(ng/2 - 1))
-    # figure, axis = plt.subplots(r, c) 
-
-    # cr, cc = 0, 0
-    # for e in exerciseJoints:
-    #     axis[cr,cc].scatter(xpoints, ypoints[e])
-    #     axis[cr,cc].set_title(e)
-
-    #     cr += 1 
-    #     if cr == r:
-    #        cr = 0
-    #        cc += 1
-
     plt.show() 
 
 def clean_data(txt_data, exerciseJoints, target, decimals):
@@ -96,7 +81,6 @@ storage = firebase_app.storage()
 db = firebase_app.database()
 
 # mediapipe tools
-mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
 # get pose landmarks filters

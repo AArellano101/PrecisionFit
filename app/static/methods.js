@@ -39,7 +39,7 @@ async function toggleRep(start=true, exercise) {
             
             if (data['response'] != NaN) {
                 console.log('Prediction wasnt empty; ending rep.')
-                let prediction = Number(data['response'])*100
+                let prediction = Number(data['response'])
                 scores.push(prediction)
                 $('#accuracy-score').text(`${prediction}%`)
                 return prediction

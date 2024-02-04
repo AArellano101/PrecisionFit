@@ -10,6 +10,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 
+def sin_activation(x):
+    return tf.math.sin(x * (np.pi / 180.0))
+
 EPOCHS = 500
 
 fbc = open('src/info/firebase_config.json')
@@ -101,10 +104,11 @@ def main():
 
     model = tf.keras.Sequential()
 
-    model.add(tf.keras.layers.Dense(25, input_dim=inputNodes, activation='relu'))
-    model.add(tf.keras.layers.Dense(25, activation='relu'))
-    model.add(tf.keras.layers.Dense(25, activation='relu'))
-    model.add(tf.keras.layers.Dense(1, activation='linear' ))
+    model.add(tf.keras.layers.Dense(25, input_dim=inputNodes, activation=sin_activation))
+    model.add(tf.keras.layers.Dense(25, activation=sin_activation))
+    model.add(tf.keras.layers.Dense(25, activation=sin_activation))
+    model.add(tf.keras.layers.Dense(25, activation=sin_activation))
+    model.add(tf.keras.layers.Dense(1, activation='sigmoid' ))
 
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_squared_error'])
 
